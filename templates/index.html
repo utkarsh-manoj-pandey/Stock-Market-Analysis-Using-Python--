@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Weather Data</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Location</th>
+                    <th>Temperature (°C)</th>
+                    <th>Conditions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in weather_data %}
+                <tr>
+                    <td>{{ data.location }}</td>
+                    <td>{{ data.temperature_Celsius }}</td>
+                    <td>{{ data.conditions }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
+
